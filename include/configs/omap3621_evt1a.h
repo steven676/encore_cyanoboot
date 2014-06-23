@@ -348,6 +348,10 @@ if itest ${forcerecovery} -eq 2; then \
   run bcbreset; \
   setenv bootvar recoveryboot;\
 fi;  \
+if itest ${forcerecovery} -eq 3; then \
+  echo Forced to boot into recovery mode; \
+  setenv bootvar recoveryboot;\
+fi;  \
 fatload mmc ${mmcromdev}:2 0x81c00000 BCB 0x1000;\
 if itest.l $? -ne 0; then\
   echo Missing BCB forces recovery mode;\

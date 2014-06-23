@@ -808,7 +808,7 @@ static void Encore_boot(void)
 
 		// If recovery is selected
 		if(mode_idx == 1)
-			setenv("forcerecovery", "2");
+			setenv("forcerecovery", "3");
 		else
 			setenv("forcerecovery", "0");
 
